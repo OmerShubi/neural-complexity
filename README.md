@@ -35,6 +35,8 @@ To freeze the weights of the adaptive model and evaluate it on `heldout_set.txt`
 
     time python main.py --model_file 'adapted_model.pt' --vocab_file 'wiki_2_vocab.txt' --cuda --data_dir './data/adaptivecorpus/' --testfname 'heldout_set.txt' --test --words > FILENAME.OUTPUT
 
+> :warning: Note, `vocab_file` should contain an entry for `<eos>`.
+
 ## Features
 * Outputs incremental word-by-word information-theoretic complexity estimates (i.e. surprisal, entropy, entropy reduction) if the runtime command `--words` is given.
 * Can function as an [adaptive language model](http://aclweb.org/anthology/D18-1499) if the runtime command `--adapt` is given (van Schijndel and Linzen, 2018). [Complete replication instructions](https://github.com/vansky/replications/blob/master/vanschijndel_linzen-2018-emnlp/vanschijndel_linzen-2018-emnlp-replication.md)
